@@ -60,3 +60,4 @@ replay_pid*
 >>>>>>> 387ea6f1b4848845cee03eba1066ba702c3374c8
 "src/main/resources/credentials.json" 
 "*.json" 
+"src/main/resources/credentials.json" 
