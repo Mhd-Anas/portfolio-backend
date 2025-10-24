@@ -1,21 +1,12 @@
 package com.portfolio.backend.model;
 
-// Remove these JPA imports and annotations
-// import jakarta.persistence.*;
 
-// @Entity
-// @Table(name = "contact_messages")
 public class ContactMessage {
-
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
     private Long id;
-
     private String name;
     private String email;
     private String subject;
-
-    // @Column(length = 2000)
     private String message;
 
     public ContactMessage() {}
@@ -27,7 +18,7 @@ public class ContactMessage {
         this.message = message;
     }
 
-    // Getters and setters remain the same
+    // Keep getters and setters (same as before)
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
