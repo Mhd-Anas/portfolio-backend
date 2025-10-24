@@ -14,6 +14,7 @@ public class ContactMessageController {
     private final GoogleSheetsService sheetsService;
     private static final Logger logger = LoggerFactory.getLogger(ContactMessageController.class);
 
+    // Remove any repository dependency - only keep GoogleSheetsService
     public ContactMessageController(GoogleSheetsService sheetsService) {
         this.sheetsService = sheetsService;
     }
@@ -23,7 +24,7 @@ public class ContactMessageController {
         try {
             logger.info("📨 Received contact from: {} ({})", message.getName(), message.getEmail());
             
-            // Save to Google Sheets
+            // Save to Google Sheets only
             sheetsService.saveContactToSheet(
                 message.getName(),
                 message.getEmail(), 
@@ -40,13 +41,11 @@ public class ContactMessageController {
         }
     }
 
-    // Health check endpoint
     @GetMapping("/health")
     public String health() {
         return "✅ Backend is healthy!";
     }
     
-    // Test endpoint
     @GetMapping("/test")
     public String test() {
         return "✅ Contact API is working!";
